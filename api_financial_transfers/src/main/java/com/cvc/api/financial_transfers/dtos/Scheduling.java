@@ -2,11 +2,13 @@ package com.cvc.api.financial_transfers.dtos;
 
 import java.time.LocalDate;
 
+import com.cvc.api.financial_transfers.entities.Tax;
+
 public class Scheduling {
 	private Integer originAccount;
 	private Integer destinationAccount;
 	private Double value;
-	private Double tax;
+	private Tax tax;
 	private LocalDate transferDate;
 	private LocalDate schedulingDate;
 	
@@ -38,11 +40,11 @@ public class Scheduling {
 		this.value = value;
 	}
 
-	public Double getTax() {
+	public Tax getTax() {
 		return tax;
 	}
 
-	public void setTax(Double tax) {
+	public void setTax(Tax tax) {
 		this.tax = tax;
 	}
 
