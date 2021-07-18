@@ -15,7 +15,7 @@ Como fazer o projeto funcionar:
 3 - Execute o MS (projeto api_financial_transfers)
   - Esse é um projeto spring-boot que pode ser inicializado com o comando: 
   ```sh
-  mvn clear package
+  mvn clean package
   java -jar <nome do jar gerado na pasta target>
   ```
  
