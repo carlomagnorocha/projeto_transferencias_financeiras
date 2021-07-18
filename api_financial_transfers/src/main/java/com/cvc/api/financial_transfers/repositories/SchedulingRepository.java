@@ -27,16 +27,18 @@ public class SchedulingRepository {
 		Tax tax = new Tax(scheduling.getValue(), scheduling.getTransferDate(), scheduling.getSchedulingDate());
 		tax.calculate();
 		
-		scheduling.setTax(tax);
+		scheduling.setTax(tax.getTaxValue());
+		scheduling.setType(tax.getType());
 		
-		schedulingList.add(scheduling);
-		
-		response.setCode(RespostaCodigo.CODE_SUCCESS.getValue());
-		
-		if(tax.getTaxValue() != null && tax.getTaxValue() != 0.0)
+		if(tax.getTaxValue() != null && tax.getTaxValue() != 0.0) {
+			schedulingList.add(scheduling);
+			response.setCode(RespostaCodigo.CODE_SUCCESS.getValue());
 			response.setMessage("Operation Performed Successfully");
-		else
+		}
+		else {
+			response.setCode(RespostaCodigo.CODE_WITHOUT_TAX.getValue());
 			response.setMessage("There is no tax to apply");
+		}
 		
 		return response;
 	}

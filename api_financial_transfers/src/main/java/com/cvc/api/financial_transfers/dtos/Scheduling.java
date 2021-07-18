@@ -8,7 +8,8 @@ public class Scheduling {
 	private Integer originAccount;
 	private Integer destinationAccount;
 	private Double value;
-	private Tax tax;
+	private Double tax;
+	private Character type;
 	private LocalDate transferDate;
 	private LocalDate schedulingDate;
 	
@@ -40,11 +41,11 @@ public class Scheduling {
 		this.value = value;
 	}
 
-	public Tax getTax() {
+	public Double getTax() {
 		return tax;
 	}
 
-	public void setTax(Tax tax) {
+	public void setTax(Double tax) {
 		this.tax = tax;
 	}
 
@@ -62,6 +63,14 @@ public class Scheduling {
 
 	public void setSchedulingDate(LocalDate schedulingDate) {
 		this.schedulingDate = schedulingDate;
+	}
+
+	public Character getType() {
+		return type;
+	}
+
+	public void setType(Character type) {
+		this.type = type;
 	}
 	
 }
