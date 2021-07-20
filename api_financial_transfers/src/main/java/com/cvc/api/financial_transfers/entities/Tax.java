@@ -20,15 +20,15 @@ public class Tax {
 	}
 	
 	
-	private Double calculateA() {
+	public Double calculateA() {
 		return (double)IndexesTax.A_TYPE_INDEX1.getValue() + (this.transferValue * ((double)IndexesTax.A_TYPE_INDEX2.getValue()/(double)100));
 	}
 	
-	private Double calculateB() {
+	public Double calculateB() {
 		return (double)IndexesTax.B_TYPE_INDEX1.getValue() * (ChronoUnit.DAYS.between(this.schedulingDate, this.transferDate));
 	}
 	
-	private Double calculateC() {
+	public Double calculateC() {
 		if(this.transferDate.isAfter(this.schedulingDate.plusDays(10)) && this.transferDate.isBefore(this.schedulingDate.plusDays(21)))
 			return this.transferValue * ((double)IndexesTax.C_TYPE_INDEX1.getValue()/(double)100);
 		else if(this.transferDate.isAfter(this.schedulingDate.plusDays(20)) && this.transferDate.isBefore(this.schedulingDate.plusDays(31))) 
@@ -65,6 +65,30 @@ public class Tax {
 		}
 		else {
 			this.taxValue = 0.0; // transferDate or schedulingDate null
+		}
+	}
+	
+	public Character typeUnitTest() {
+		if(this.transferDate != null && this.schedulingDate != null) {
+			if(this.transferDate.isEqual(this.schedulingDate)) { // A type
+				return 'A';
+			}
+			else {
+				if(this.transferDate.isBefore(this.schedulingDate.plusDays(11))) { //B type
+					return 'B';
+				}
+				else {
+					if(this.transferDate.isAfter(this.schedulingDate.plusDays(10))) { // C type
+						return 'C';
+					}
+					else { // there is no tax to apply
+						return null; 
+					}
+				}
+			}
+		}
+		else {
+			return '.'; // transferDate or schedulingDate null
 		}
 	}
 
