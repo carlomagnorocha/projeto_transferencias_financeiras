@@ -13,12 +13,19 @@ O que foi usado para desenvolver o projeto:
 Como fazer o projeto funcionar:
 --------------------------------------------------------------------------------------------------------------------------------------
 3 - Execute o MS (projeto api_financial_transfers)
-  - Esse é um projeto spring-boot que pode ser inicializado com o comando: "java -jar <nome do jar gerado na pasta target>"
+  - Esse é um projeto spring-boot que pode ser inicializado com o comando: 
+  ```sh
+  mvn clean package
+  java -jar <nome do jar gerado na pasta target>
+  ```
  
 4 - Execute o front-end (projeto front_financial_transfers)
   - Para executar o front é necessário ter o nodeJs e o npm instalados (foram usados o nodejs v11.9.0 e npm 6.5.0)
-  - Com isso execute o comando: "npm install" na pasta do projeto
-  - Depois disso execute o comando: "npm start"
+  - Com isso execute o comando: "npm install" na pasta do projeto e depois disso execute o comando: "npm start"
+  ```sh
+  npm install
+  npm start
+  ```
   - Se tudo correr bem, Uma aba do navegador se abrirá com a página inicial do projeto.
  
  
