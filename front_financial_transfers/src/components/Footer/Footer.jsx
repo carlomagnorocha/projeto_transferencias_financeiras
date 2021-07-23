@@ -15,7 +15,7 @@ class Footer extends Component {
                                 {<a href="#">Manual</a>}
                             </li>
                             <li>
-                                {<a href="https://github.com/PMACS-ORG" target="_blank">GitHub</a>}
+                                {<a href="https://github.com/carlomagnorocha/projeto_transferencias_financeiras" target="_blank">GitHub</a>}
                             </li>
                         </ul>
                     </nav>

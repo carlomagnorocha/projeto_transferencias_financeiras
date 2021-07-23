@@ -28,7 +28,7 @@ class ApplicationTests {
 	}
 	
 	@Test
-	void testCalculatebC_1() {
+	void testCalculatebC() {
 		assertEquals(8.0, new Tax(100D, LocalDate.now().plusDays(11), LocalDate.now()).calculateC()); // 8% of transfer value
 		assertEquals(8.0, new Tax(100D, LocalDate.now().plusDays(20), LocalDate.now()).calculateC()); // 8% of transfer value
 		
